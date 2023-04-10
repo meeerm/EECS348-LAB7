@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="myport" content="width=device-width, initial-scale=1.0">
+    <title>MULTIPLICATION TABLE</title>
+</head>
+<body>
+
+    <h1>EECS 348 SPRING 2023 LAB NUMBER 7: MULTIPLICATION TABLE</h1>
+    <form action="" method="post">
+        <label for="num">Please provide the size of the multiplication table:</label>
+        <input type="number" id="num" name="num" min="1" required>
+        <button type="submit">  Generate the Multiplication Table by clicking here</button>
+    </form>
+    
+
+  <?php
+
+    if (isset($_POST['num'])) {
+        $num = intval($_POST['num']);
+        echo '<table style="border: 1px solid black; border-collapse: collapse">';
+        echo '<tr><td style="border: 3px solid black"></td>';
+
+        for ($k = 1; $k <= $num; $k++) {
+            echo '<td style="border: 3px solid black">' . $k . '</td>';
+        }
+
+        echo '</tr>';
+
+        for ($j = 1; $j <= $num; $j++) {
+            echo '<tr>';
+            echo '<td style="border: 3px solid black">' . $j . '</td>';
+
+            for ($l = 1; $l <= $num; $l++) {
+                echo '<td style="border: 3px solid black">' . ($j * $l) . '</td>';
+            }
+
+            echo '</tr>';
+        }
+
+        echo '</table>';
+    }
+?>
+
+</body>
+</html>

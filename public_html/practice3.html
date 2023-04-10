@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript pw1 verification</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,;
+            background-image: linear-gradient(to right, #0ccd4c, #afcde6, #b6d2ce, #b8d9b9, #270951);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #b2a21569;
+            padding: 190px;
+            border-radius: 12px;
+            
+            width: 400px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 24px;
+        }
+
+        input[type="pw1"] {
+            background-color: rgba(142, 16, 16, 0.979);
+            width: 100%;
+            padding: 100px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #670505b2;
+        }
+
+      
+
+        button:hover {
+            background-color: rgb(56, 12, 52);
+        }
+        
+        h1 {
+            color: rgba(255, 255, 255, 0.436);
+        }
+
+        input::placeholder {
+            color: rgb(240, 236, 236);
+        }
+
+    </style>
+    <script>
+        function validatepw1s() {
+            const pw11 = document.getElementById("pw11").value;
+            const pw12 = document.getElementById("pw12").value;
+
+            if (pw11.length < 8 || pw12.length < 8) {
+                alert("The password must be at least eight characters long or more .");
+            } else if (pw11 !== pw12) {
+                alert("The two passwords are not the same, please re-enter.");
+            } else {
+                alert("The two passwords have been matched.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Verification</h1>
+        <input type="pw1" id="pw11" placeholder="ENTER PASSWORD">
+        <input type="pw1" id="pw12" placeholder="VERIFY PASSWORD">
+        <button onclick="validatepw1s()">Submit</button>
+    </div>
+</body>
+</html>
